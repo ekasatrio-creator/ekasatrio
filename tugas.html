@@ -1,0 +1,197 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Mahasiswa</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>body {
+    font-family: Arial, sans-serif;
+    background-color: #fffdfd;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+.card {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    padding: 48px 0 0;
+    border-right: 1px solid #04104df6;
+}
+
+.sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: #333;
+}
+
+.nav-link.active {
+    color: #007bff;
+}
+
+main {
+    margin-top: 20px;
+}
+
+.list-group-item {
+    font-size: 1.1em;
+}</style>
+<body>
+    <div class="container-fluid">
+        <header class="bg-dark text-white text-center p-3">
+            <h1>Dashboard Mahasiswa</h1>
+            <p>Informasi dan Statistik Mahasiswa</p>
+        </header>
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Beranda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">REKAPITULASI NIAI</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">PRESENSI</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">TUGAS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">RESPONSI</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">UTS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">UAS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">TAMBAHAN DATA</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">BIMBINGAN</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+    <div class="content">
+        <header class="text-center mb-4">
+            <h1>Tugas Mahasiswa</h1>
+        </header>
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <h2>Tugas Saat Ini</h2>
+                <ul id="taskList" class="list-group">
+                    <!-- Task items will be populated by JavaScript -->
+                </ul>
+            </div>
+        </div>
+        <div class="header">
+            <div></div>
+            <button class="btn btn-danger">Logout</button>
+        </div>
+        <div class="filters">
+            <select class="form-control mb-2">
+                <option>PRODI</option>
+            </select>
+            <select class="form-control mb-2">
+                <option>Pertemuan</option>
+            </select>
+            <select class="form-control mb-2">
+                <option>Tugas</option>
+            </select>
+        </div>
+        <table class="table-container table">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>NIM</th>
+                    <th>Nilai</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Eka Satrio</td>
+                    <td>23.01.5105</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Bella</td>
+                    <td>23.01.5091</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Varadella</td>
+                    <td>23.01.5092</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Ervina</td>
+                    <td>23.01.5093</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Kania</td>
+                    <td>23.01.5094</td>
+                    <td>100</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="footer">
+            <input type="text" class="form-control" placeholder="NIM">
+            <input type="text" class="form-control" placeholder="Nilai">
+            <button class="btn btn-primary">Tambah</button>
+        </div>
+    </div>
+</main>
+</div>
+</div>
+<script>
+// Example JavaScript for task management
+document.getElementById('taskForm').addEventListener('submit', function (e) {
+e.preventDefault();
+const taskName = document.getElementById('taskName').value;
+const taskDeadline = document.getElementById('taskDeadline').value;
+
+if (taskName && taskDeadline) {
+    const newTask = document.createElement('li');
+    newTask.className = 'list-group-item';
+    newTask.innerText = `${taskName} - Deadline: ${taskDeadline}`;
+    document.getElementById('taskList').appendChild(newTask);
+
+    document.getElementById('taskForm').reset();
+}
+});
+</script>
+</body>
+
+</html>

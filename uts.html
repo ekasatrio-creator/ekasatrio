@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil UTS Perkuliahan</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fffdfd;
+        }
+
+        header {
+            margin-bottom: 20px;
+        }
+
+        .card {
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 100;
+            padding: 48px 0 0;
+            border-right: 1px solid #0b2868f6;
+        }
+
+        .sidebar-sticky {
+            position: relative;
+            top: 0;
+            height: calc(100vh - 48px);
+            padding-top: .5rem;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .nav-link.active {
+            color: #007bff;
+        }
+
+        main {
+            margin-top: 20px;
+            margin-left: 200px; /* Adjust as per sidebar width */
+        }
+
+        .list-group-item {
+            font-size: 1.1em;
+        }
+
+        .topbar {
+            margin-bottom: 20px;
+        }
+
+        .dropdowns select {
+            margin-right: 10px;
+        }
+
+        .logout {
+            float: right;
+        }
+
+        .table-container {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .table-container th,
+        .table-container td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .table-container th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <header class="bg-dark text-white text-center p-3">
+            <h1>Dashboard Mahasiswa</h1>
+            <p>Informasi dan Statistik Mahasiswa</p>
+        </header>
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Beranda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Rekapitulasi Nilai</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Presensi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Tugas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Responsi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">UTS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">UAS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Tambahan Data</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Bimbingan</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <div class="content">
+                    <div class="topbar">
+                        <h2>Hasil UTS Perkuliahan</h2>
+                    </div>
+                    <div class="header">
+                        <div class="dropdowns">
+                            <select class="form-control d-inline" style="width: auto;">
+                                <option>Prodi</option>
+                                <!-- Add more options as needed -->
+                            </select>
+                            <select class="form-control d-inline" style="width: auto;">
+                                <option>Semester</option>
+                                <!-- Add more options as needed -->
+                            </select>
+                            <select class="form-control d-inline" style="width: auto;">
+                                <option>Mata Kuliah</option>
+                                <!-- Add more options as needed -->
+                            </select>
+                        </div>
+                        <button class="btn btn-primary logout">Logout</button>
+                    </div>
+                    <div class="table-container">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama</th>
+                                    <th>NIM</th>
+                                    <th>Mata Kuliah</th>
+                                    <th>Nilai</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Eka Satrio</td>
+                                    <td>23.01.5105</td>
+                                    <td>Matematika Diskrit</td>
+                                    <td>85</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Bella</td>
+                                    <td>23.01.5091</td>
+                                    <td>Statistika</td>
+                                    <td>90</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Varadella</td>
+                                    <td>23.01.5092</td>
+                                    <td>Aljabar Linier</td>
+                                    <td>88</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Natasya</td>
+                                    <td>23.01.5093</td>
+                                    <td>Pemrograman Web</td>
+                                    <td>92</td>
+                                </tr>
+                                <!-- Additional rows as needed -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

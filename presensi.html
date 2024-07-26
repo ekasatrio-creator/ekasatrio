@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presensi Mahasiswa</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fffdfd;
+        }
+
+        header {
+            margin-bottom: 20px;
+        }
+
+        .card {
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 100;
+            padding: 48px 0 0;
+            border-right: 1px solid #24167ef6;
+        }
+
+        .sidebar-sticky {
+            position: relative;
+            top: 0;
+            height: calc(100vh - 48px);
+            padding-top: .5rem;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .nav-link.active {
+            color: #007bff;
+        }
+
+        main {
+            margin-top: 20px;
+        }
+
+        .list-group-item {
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <header class="bg-dark text-white text-center p-3">
+            <h1>Dashboard Mahasiswa</h1>
+            <p>Informasi dan Statistik Mahasiswa</p>
+        </header>
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Beranda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">REKAPITULASI NILAI</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">PRESENSI</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">TUGAS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">RESPONSI</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">UTS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">UAS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">TAMBAHAN DATA</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">BIMBINGAN</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <div class="container mt-4">
+                    <header class="text-center mb-4">
+                        <h1>Presensi Mahasiswa</h1>
+                    </header>
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <h3>INFORMASI KELAS</h3>
+                            <p><strong>Mata Kuliah:</strong> Pemrograman Web</p>
+                            <p><strong>Dosen:</strong> Firman Asharudin, S.Kom, M.Kom</p>
+                            <p><strong>Ruang:</strong> 7.4.1</p>
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <h3></h3>
+                            <h4 id="currentDate"></h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>Daftar Kehadiran</h3>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>NIM</th>
+                                        <th>MAHASISWA</th>
+                                        <th>JAM</th>
+                                        <th>LOKASI</th>
+                                        <th>KELAS</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="attendanceTableBody">
+                                    <tr>
+                                        <td>1</td>
+                                        <td>23.01.5105</td>
+                                        <td>EKA SATRIO PRAMUDITA</td>
+                                        <td>07.15</td>
+                                        <td>AMIKOM</td>
+                                        <td>23D3T103 Pemrograman Web</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>23.01.5105</td>
+                                        <td>EKA SATRIO PRAMUDITA</td>
+                                        <td>07.16</td>
+                                        <td>AMIKOM</td>
+                                        <td>23D3T103 Pemrograman Web</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>23.01.5105</td>
+                                        <td>EKA SATRIO PRAMUDITA</td>
+                                        <td>07.17</td>
+                                        <td>DASHBOARD</td>
+                                        <td>23D3T103 Pemrograman Web</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>23.01.5105</td>
+                                        <td>EKA SATRIO PRAMUDITA</td>
+                                        <td>07.18</td>
+                                        <td>AMIKOM</td>
+                                        <td>23D3T103 Pemrograman Web</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>23.01.5105</td>
+                                        <td>EKA SATRIO PRAMUDITA</td>
+                                        <td>07.19</td>
+                                        <td>DASHBOARD</td>
+                                        <td>23D3T103 Pemrograman Web</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <button class="btn btn-primary" onclick="markAllPresent()">Tandai Semua Hadir</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script>
+        function markAllPresent() {
+            alert('Semua mahasiswa telah ditandai hadir.');
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const today = new Date();
+            const formattedDate = today.toLocaleDateString('id-ID', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            document.getElementById('currentDate').innerText = formattedDate;
+        });
+    </script>
+</body>
+
+</html>
